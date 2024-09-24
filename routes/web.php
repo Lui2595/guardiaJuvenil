@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ElementosController;
+use App\Http\Controllers\PruebasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +27,7 @@ Auth::routes();
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/admin/elementos', ElementosController::class);
+Route::get('/admin/pruebas/{id}/{elemento_id}', [PruebasController::class, 'evaluar'])->name('pruebas.evaluar');
+Route::post('/admin/pruebas/{id}/{elemento_id}', [PruebasController::class, 'evaluarStore'])->name('pruebas.store');
+
 

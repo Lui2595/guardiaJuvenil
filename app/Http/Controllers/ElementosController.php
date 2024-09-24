@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\elementos;
+use App\Models\pruebas;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,8 @@ class ElementosController extends Controller
     public function index()
     {
         $elementos = elementos::all();
-        return view('elementos.index', compact('elementos'));
+        $pruebas = pruebas::all();
+        return view('elementos.index', compact('elementos', 'pruebas'));
     }
 
     /**

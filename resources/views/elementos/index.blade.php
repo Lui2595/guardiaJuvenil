@@ -11,26 +11,40 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Unidad</th>
-                                <th>Edad</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($elementos as $elemento)
+                    <form action="">
+                        <table class="table table-bordered">
+                            <thead>
                                 <tr>
-                                    <td>{{ $elemento->id }}</td>
-                                    <td>{{ $elemento->nombre . " " . $elemento->apellido_paterno . " " . $elemento->apellido_materno }}</td>
-                                    <td>{{ $elemento->unidad }}</td>
-                                    <td>{{ $elemento->edad }}</td>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Unidad</th>
+                                    <th>Edad</th>
+                                    @if (Auth::user()->roll == 'admin')
+                                        <th>Pruebas</th>
+                                    @endif
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach ($elementos as $elemento)
+                                    <tr>
+                                        <td>{{ $elemento->id }}</td>
+                                        <td>{{ $elemento->nombre . ' ' . $elemento->apellido_paterno . ' ' . $elemento->apellido_materno }}
+                                        </td>
+                                        <td>{{ $elemento->unidad }}</td>
+                                        <td>{{ $elemento->edad }}</td>
+                                        @if (Auth::user()->roll == 'admin')
+                                            <td>
+                                                @foreach ($pruebas as $prueba)
+                                                    <a href="{{ route('pruebas.evaluar', [$prueba->id, $elemento->user_id]) }}"
+                                                        class="btn btn-primary">{{ $prueba->nombre }}</a>
+                                                @endforeach
+                                            </td>
+                                        @endif
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
