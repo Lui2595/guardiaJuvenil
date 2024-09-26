@@ -16,20 +16,22 @@
                         <thead>
                         <tr>
                             <th>Nombre</th>
+                            <th>Evaluación</th>
                             <th>Descripción</th>
                             <th>Medida</th>
-                            <th>Evaluación</th>
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($prueba->prueba_datos as $dato)
                             <tr>
                                 <td>{{ $dato->nombre }}</td>
-                                <td>{{ $dato->descripcion }}</td>
-                                <td>{{ $dato->medida }}</td>
                                 <td>
                                     <input type="text" class="form-control" name="resultado_{{ $dato->id }}" value="{{ $dato->resultado }}">
                                 </td>
+                                <td>{{ $dato->descripcion }}</td>
+                                <td>{{ $dato->medida }}</td>
+
                             </tr>
                         @endforeach
                     </tbody>
@@ -44,3 +46,13 @@
 @section('buttons')
     <a href="{{ route('elementos.index') }}" class="btn btn-secondary">Volver</a>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.table').DataTable({
+                "scrollX": true
+            });
+        });
+    </script>
+@endpush

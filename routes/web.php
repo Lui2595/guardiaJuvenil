@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ElementosController;
 use App\Http\Controllers\PruebasController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +32,6 @@ Route::resource('/admin/elementos', ElementosController::class);
 Route::get('/admin/pruebas/{id}/{elemento_id}', [PruebasController::class, 'evaluar'])->name('pruebas.evaluar');
 Route::post('/admin/pruebas/{id}/{elemento_id}', [PruebasController::class, 'evaluarStore'])->name('pruebas.store');
 
+Route::put('/admin/home/actualizar', [HomeController::class, 'actualizar'])->name('home.actualizar');
 
+Route::resource('/admin/usuarios', UsersController::class);

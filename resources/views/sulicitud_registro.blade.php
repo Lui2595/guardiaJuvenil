@@ -107,7 +107,7 @@
                 <input type="text" class="form-control" placeholder="Apellido Materno" name="apellido_materno" id="apellido_materno" value="{{ old('apellido_materno') }}" required>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Edad" name="edad" id="edad" value="{{ old('edad') }}" required>
+                <input type="number" class="form-control" placeholder="Edad" name="edad" id="edad" value="{{ old('edad') }}" required min="1" max="100">
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Email" name="email" id="email" value="{{ old('email') }}" required>

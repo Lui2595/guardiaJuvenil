@@ -3,7 +3,7 @@
     <div class="sidebar-logo">
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
-        <a href="{{ url('/') }}" class="logo d-flex justify-content-center w-100">
+        <a href="{{ url('/') }}" class="logo d-flex justify-content-center">
           <img
             src="/frontTheme/images/logo.png"
             alt="navbar brand"
@@ -34,6 +34,14 @@
                   <p>Dashboard</p>
                 </a>
             </li>
+            @if(Auth::user()->roll == 'superadmin')
+                <li class="nav-item">
+                    <a href="{{ route('usuarios.index') }}">
+                        <i class="fas fa-home"></i>
+                        <p>Lista de Usuarios</p>
+                    </a>
+                </li>
+            @endif
           {{-- <li class="nav-item active">
             <a
               data-bs-toggle="collapse"
@@ -61,12 +69,14 @@
             </span>
             <h4 class="text-section">Elementos</h4>
           </li>
-          <li class="nav-item">
-            <a href="{{ route('elementos.index') }}">
-              <i class="fas fa-home"></i>
-              <p>Lista de Elementos</p>
-            </a>
-        </li>
+          @if(in_array(Auth::user()->roll, ['admin', 'superadmin']))
+            <li class="nav-item">
+                <a href="{{ route('elementos.index') }}">
+                <i class="fas fa-home"></i>
+                <p>Lista de Elementos</p>
+                </a>
+            </li>
+          @endif
 
         </ul>
       </div>
