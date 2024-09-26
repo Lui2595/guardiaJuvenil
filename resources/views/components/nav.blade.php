@@ -47,6 +47,9 @@
         </nav>
 
         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+            <li class="nav-item">
+               {{date('d/m/Y');}}
+            </li>
           <li
             class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
             >
