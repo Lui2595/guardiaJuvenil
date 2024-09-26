@@ -20,5 +20,7 @@ class elementos extends Model
         'telefono_madre', 'ocupacion_madre', 'concentimiento', 'contacto_emergencia'
     ];
 
-
+    function user(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }

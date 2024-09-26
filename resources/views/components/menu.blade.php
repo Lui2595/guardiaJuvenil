@@ -76,7 +76,14 @@
                 <p>Lista de Elementos</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('pase_lista.index') }}">
+                <i class="fas fa-home"></i>
+                <p>Pase de Lista</p>
+                </a>
+            </li>
           @endif
+
 
         </ul>
       </div>
