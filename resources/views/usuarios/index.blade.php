@@ -119,13 +119,7 @@
             $("table").DataTable({
                 "scrollX": true
             });
-            $(".modal-edit-rol").click(function(event) {
-                event.preventDefault();
-                $("#rolModal").find("form").attr("action", window.location.href + "/" + $(this).data("id"));
-                $("#rolModal").modal("show");
-                var rol = $(this).data("rol");
-                $("#roll").val(rol);
-            });
+
         });
 
         $(".modal-edit-contrasena").click(function(event) {
@@ -133,6 +127,12 @@
             $("#contrasenaModal").find("form").attr("action", window.location.href + "/" + $(this).data("id"));
             $("#contrasenaModal").modal("show");
         });
-
+        $(".modal-edit-rol").click(function(event) {
+                event.preventDefault();
+                $("#rolModal").find("form").attr("action", window.location.href + "/" + $(this).data("id"));
+                $("#rolModal").modal("show");
+                var rol = $(this).data("rol");
+                $("#roll").val(rol);
+            });
     </script>
 @endpush
