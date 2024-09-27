@@ -19,7 +19,7 @@
                                     <th>Nombre</th>
                                     <th>Unidad</th>
                                     <th>Edad</th>
-                                    @if (Auth::user()->roll == 'admin')
+                                    @if (Auth::user()->roll == 'admin' || Auth::user()->roll == 'superadmin')
                                         <th>Pruebas</th>
                                     @endif
                                 </tr>
