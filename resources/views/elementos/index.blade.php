@@ -32,7 +32,7 @@
                                         </td>
                                         <td>{{ $elemento->unidad }}</td>
                                         <td>{{ $elemento->edad }}</td>
-                                        @if (Auth::user()->roll == 'admin')
+                                        @if (Auth::user()->roll == 'admin' || Auth::user()->roll == 'superadmin')
                                             <td>
                                                 @foreach ($pruebas as $prueba)
                                                     <a href="{{ route('pruebas.evaluar', [$prueba->id, $elemento->user_id]) }}"
