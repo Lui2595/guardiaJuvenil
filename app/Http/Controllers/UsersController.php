@@ -83,4 +83,11 @@ class UsersController extends Controller
     {
         return redirect()->back()->with('success', 'Usuario eliminado correctamente');
     }
+
+    public function proposicion()
+    {
+
+        $proposicion = User::with('elemento')->get();
+        return view('usuarios.proposicion', compact('proposicion'));
+    }
 }

@@ -49,4 +49,12 @@ class User extends Authenticatable
     {
         return $this->hasOne(elementos::class);
     }
+    public function horas_servicio()
+    {
+        return $this->hasMany(PaseLista::class);
+    }
+    public function horas_extra()
+    {
+        return $this->hasMany(HorasExtra::class);
+    }
 }

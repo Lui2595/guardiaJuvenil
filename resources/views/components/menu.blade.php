@@ -42,6 +42,14 @@
                     </a>
                 </li>
             @endif
+            @if(Auth::user()->roll == 'superadmin' && Auth::user()->raza)
+            <li class="nav-item">
+                <a href="{{ route('usuarios.proposicion') }}">
+                    <i class="fas fa-home"></i>
+                    <p>Lista de Proposicion</p>
+                </a>
+            </li>
+            @endif
           {{-- <li class="nav-item active">
             <a
               data-bs-toggle="collapse"
@@ -80,6 +88,12 @@
                 <a href="{{ route('pase_lista.index') }}">
                 <i class="fas fa-home"></i>
                 <p>Pase de Lista</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('horas_extra.index') }}">
+                <i class="fas fa-home"></i>
+                <p>Horas Extra</p>
                 </a>
             </li>
           @endif

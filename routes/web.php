@@ -6,6 +6,7 @@ use App\Http\Controllers\PruebasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PaseListaController;
+use App\Http\Controllers\HorasExtraController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,7 +37,9 @@ Route::post('/admin/pruebas/{id}/{elemento_id}', [PruebasController::class, 'eva
 Route::put('/admin/home/actualizar', [HomeController::class, 'actualizar'])->name('home.actualizar');
 
 Route::resource('/admin/usuarios', UsersController::class);
+Route::get('/admin/usuarios/raza/proposicion', [UsersController::class, 'proposicion'])->name('usuarios.proposicion');
 
 Route::resource('/admin/pase_lista', PaseListaController::class);
+Route::resource('/admin/horas_extra', HorasExtraController::class);
 Route::get('/admin/pase_lista/tabla/get', [PaseListaController::class, 'tabla'])->name('pase_lista.tabla');
 
