@@ -14,6 +14,6 @@ class HorasExtra extends Model
 
     public function elemento()
     {
-        return $this->belongsTo(Elementos::class, 'user_id', 'user_id');
+        return $this->hasOne(Elementos::class, 'user_id', 'user_id');
     }
 }
