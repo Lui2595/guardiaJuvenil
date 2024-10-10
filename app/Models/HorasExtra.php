@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Elementos;
+use App\Models\elementos;
 
 class HorasExtra extends Model
 {
@@ -15,6 +15,6 @@ class HorasExtra extends Model
     public function elemento()
     {
 
-        return $this->hasOne(Elementos::class, 'user_id', 'user_id');
+        return $this->hasOne(elementos::class, 'user_id', 'user_id');
     }
 }
