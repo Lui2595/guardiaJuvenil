@@ -14,6 +14,7 @@ class HorasExtra extends Model
 
     public function elemento()
     {
+
         return $this->hasOne(Elementos::class, 'user_id', 'user_id');
     }
 }
