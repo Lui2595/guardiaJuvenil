@@ -57,4 +57,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(HorasExtra::class);
     }
+
+    public function is_raza() {
+        return $this->hasOne(Raza::class);
+    }
 }

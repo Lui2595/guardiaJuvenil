@@ -15,6 +15,8 @@
                                 <th>Nombre</th>
                                 <th>Apellido Paterno</th>
                                 <th>Apellido Materno</th>
+                                <th>Papa</th>
+                                <th>Mama</th>
                                 <th>Abuelo Paterno</th>
                                 <th>Abuela Paterna</th>
                                 <th>Abuelo Materno</th>
@@ -28,15 +30,17 @@
                                    if (!$usuario->elemento) { continue; }
                                 @endphp
                                 <tr>
-                                    <td>{{ $usuario->elemento->nombre }}</td>
+                                    <td><a href="{{ route('elementos.show', $usuario->elemento->id) }}">{{ $usuario->elemento->nombre }}</a></td>
                                     <td>{{ $usuario->elemento->apellido_paterno }}</td>
                                     <td>{{ $usuario->elemento->apellido_materno }}</td>
+                                    <td>{{ $usuario->elemento->nombre_padre }}</td>
+                                    <td>{{ $usuario->elemento->nombre_madre }}</td>
                                     <td>{{ $usuario->elemento->prodecencia_abuelo_paterno }}</td>
                                     <td>{{ $usuario->elemento->prodecencia_abuela_paterna }}</td>
                                     <td>{{ $usuario->elemento->prodecencia_abuelo_materno }}</td>
                                     <td>{{ $usuario->elemento->prodecencia_abuela_materna }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary modal-edit-rol" data-id="{{ $usuario->id }}" >Aprobar</a>
+                                        <a href="#" class="btn btn-primary modal-edit-rol aprobar" data-id="{{ $usuario->id }}" >Aprobar</a>
                                     </td>
 
                                 </tr>
@@ -122,7 +126,8 @@
     <script>
         $(document).ready(function () {
             $("table").DataTable({
-                "scrollX": true
+                "scrollX": true,
+                "order": []
             });
 
         });

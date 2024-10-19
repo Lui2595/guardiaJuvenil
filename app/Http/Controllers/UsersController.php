@@ -87,7 +87,12 @@ class UsersController extends Controller
     public function proposicion()
     {
 
-        $proposicion = User::with('elemento')->get();
+        $proposicion = User::with('elemento', 'horas_extra')->get();
+        $proposicion = $proposicion->map(function ($user) {
+            $user->horas_extra = $user->horas_extra->sum('horas');
+            return $user;
+        })->sortByDesc('horas_extra');
+
         return view('usuarios.proposicion', compact('proposicion'));
     }
 }

@@ -84,10 +84,13 @@ class PaseListaController extends Controller
                     'id' => $item->user_id,
                     'nombre' => $item->nombre,
                     'apellido_paterno' => $item->apellido_paterno,
-                    'apellido_materno' => $item->apellido_materno
+                    'apellido_materno' => $item->apellido_materno,
+                    'horas' => $item->user->horas_servicio->sum('horas')
                 ];
             }
-        })->filter()->all();
+        })->filter()->sortByDesc('horas')->all();
+
+
 
         return response()->json([
             'paseLista' => $paseLista,

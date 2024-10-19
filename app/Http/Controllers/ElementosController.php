@@ -103,9 +103,10 @@ class ElementosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(elementos $elementos)
+    public function show(elementos $elementos, $id)
     {
-        //
+        $elemento = elementos::find($id);
+        return view('elementos.show', compact('elemento'));
     }
 
     /**
@@ -119,9 +120,12 @@ class ElementosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, elementos $elementos)
+    public function update(Request $request, $id)
     {
-        //
+       // dd($request->all());
+        $elemento = elementos::find($id);
+        $elemento->update($request->all()['elemento']);
+        return redirect()->route('elementos.show', $id)->with('success', 'Elemento actualizado exitosamente.');
     }
 
     /**

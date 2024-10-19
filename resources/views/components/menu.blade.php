@@ -42,7 +42,7 @@
                     </a>
                 </li>
             @endif
-            @if(Auth::user()->roll == 'superadmin' && Auth::user()->raza)
+            @if(Auth::user()->roll == 'superadmin' && Auth::user()->is_raza)
             <li class="nav-item">
                 <a href="{{ route('usuarios.proposicion') }}">
                     <i class="fas fa-home"></i>
@@ -96,6 +96,7 @@
                 <p>Horas Extra</p>
                 </a>
             </li>
+
           @endif
 
 
