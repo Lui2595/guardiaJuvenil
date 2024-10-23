@@ -21,6 +21,17 @@ use App\Http\Controllers\HorasExtraController;
 Route::get('/', function () {
     return view('construction');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/about', function () {
+    return view('about_us');
+});
+Route::get('/programa', function () {
+    return view('programa');
+});
+
 Route::get('/registro', function () {
     return view('sulicitud_registro');
 });
