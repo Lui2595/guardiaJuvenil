@@ -135,4 +135,12 @@ class ElementosController extends Controller
     {
         //
     }
+
+    public function evaluar(Request $request, $id)
+    {
+        $elemento = elementos::where('user_id', $id)->first();
+        $elemento->aprobado = $request->aprobado;
+        $elemento->save();
+        return response()->json(['success' => true]);
+    }
 }

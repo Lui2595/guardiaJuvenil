@@ -27,20 +27,51 @@
                         <tbody>
                             @foreach ($proposicion as $usuario)
                                 @php
-                                   if (!$usuario->elemento) { continue; }
+                                    if (!$usuario->elemento) {
+                                        continue;
+                                    }
+
+                                    if (
+                                        $usuario->elemento->procedencia_abuelo_paterno == null ||
+                                        $usuario->elemento->procedencia_abuela_paterna == null ||
+                                        $usuario->elemento->procedencia_abuelo_materno == null ||
+                                        $usuario->elemento->procedencia_abuela_materna == null
+                                    ) {
+                                        continue;
+                                    }
                                 @endphp
                                 <tr>
-                                    <td><a href="{{ route('elementos.show', $usuario->elemento->id) }}">{{ $usuario->elemento->nombre }}</a></td>
+                                    <td><a
+                                            href="{{ route('elementos.show', $usuario->elemento->id) }}">{{ $usuario->elemento->nombre }}</a>
+                                    </td>
                                     <td>{{ $usuario->elemento->apellido_paterno }}</td>
                                     <td>{{ $usuario->elemento->apellido_materno }}</td>
                                     <td>{{ $usuario->elemento->nombre_padre }}</td>
                                     <td>{{ $usuario->elemento->nombre_madre }}</td>
-                                    <td>{{ $usuario->elemento->prodecencia_abuelo_paterno }}</td>
-                                    <td>{{ $usuario->elemento->prodecencia_abuela_paterna }}</td>
-                                    <td>{{ $usuario->elemento->prodecencia_abuelo_materno }}</td>
-                                    <td>{{ $usuario->elemento->prodecencia_abuela_materna }}</td>
+                                    <td>{{ $usuario->elemento->procedencia_abuelo_paterno }}</td>
+                                    <td>{{ $usuario->elemento->procedencia_abuela_paterna }}</td>
+                                    <td>{{ $usuario->elemento->procedencia_abuelo_materno }}</td>
+                                    <td>{{ $usuario->elemento->procedencia_abuela_materna }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary modal-edit-rol aprobar" data-id="{{ $usuario->id }}" >Aprobar</a>
+
+                                        <div class="@if ($usuario->elemento->aprobado != null) d-none @else d-flex @endif gap-2"
+                                            id="btns-{{ $usuario->id }}">
+                                            <a href="#" class="btn btn-primary modal-edit-rol aprobar"
+                                                data-id="{{ $usuario->id }}">Aprobar</a>
+                                            <a href="#" class="btn btn-danger modal-edit-rol rechazar"
+                                                data-id="{{ $usuario->id }}">Rechazar</a>
+                                        </div>
+
+                                        @if ($usuario->elemento->aprobado == '1')
+                                            <span class="badge bg-success">Aprobado</span>
+                                            <button class="btn btn-primary cambiar"
+                                                data-id="{{ $usuario->id }}">Cambiar</button>
+                                        @endif
+                                        @if ($usuario->elemento->aprobado == '2')
+                                            <span class="badge bg-danger">Rechazado</span>
+                                            <button class="btn btn-primary cambiar"
+                                                data-id="{{ $usuario->id }}">Cambiar</button>
+                                        @endif
                                     </td>
 
                                 </tr>
@@ -52,86 +83,89 @@
         </div>
     </div>
 
-    <div class="modal fade" id="rolModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-        aria-labelledby="modalTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitleId">
-                        Editar Rol
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="mb-3">
-                            <label for="rol" class="form-label">Rol</label>
-                            <select class="form-select" aria-label="Default select example" name="roll" id="roll">
-                                <option selected>Selecciona rol</option>
-                                <option value="superadmin">Superadmin</option>
-                                <option value="admin">Admin</option>
-                                <option value="user">User</option>
-                            </select>
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="contrasenaModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-        aria-labelledby="modalTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitleId">
-                        Actualizar Contraseña
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" name="password" id="password">
-                        </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-
-                <button type="submit" class="btn btn-primary">Actualizar</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
 
 @endsection
 
 @push('scripts')
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("table").DataTable({
                 "scrollX": true,
                 "order": []
             });
 
         });
-
-
+        $(".aprobar").click(function(e) {
+            e.preventDefault();
+            confirm("¿Estas seguro de aprobar esta proposicion?");
+            if (confirm) {
+                id_elemento = $(this).data("id");
+                $.ajax({
+                    type: "PUT",
+                    url: "{{ route('elementos.evaluar', '') }}/" + $(this).data("id"),
+                    data: {
+                        _method: "PUT",
+                        _token: "{{ csrf_token() }}",
+                        aprobado: 1
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        console.log(response);
+                        console.log(id_elemento);
+                        $("#btns-" + id_elemento).removeClass("d-flex");
+                        $("#btns-" + id_elemento).addClass("d-none");
+                        $("#btns-" + id_elemento).parent().prepend(
+                            '<span class="badge bg-success">Aprobado</span><button class="btn btn-primary cambiar" data-id="' +
+                                id_elemento + '" >Cambiar</button>');
+                        $(".cambiar").click(function() {
+                            $(this).siblings("span").remove();
+                            $(this).remove();
+                            $("#btns-" + $(this).data("id")).removeClass("d-none");
+                            $("#btns-" + $(this).data("id")).addClass("d-flex");
+                        });
+                    }
+                });
+            }
+        });
+        $(".rechazar").click(function(e) {
+            e.preventDefault();
+            confirm("¿Estas seguro de rechazar esta proposicion?");
+            id_elemento = $(this).data("id");
+            if (confirm) {
+                $.ajax({
+                    type: "PUT",
+                    url: "{{ route('elementos.evaluar', '') }}/" + $(this).data("id"),
+                    data: {
+                        _method: "PUT",
+                        _token: "{{ csrf_token() }}",
+                        aprobado: 2
+                    },
+                    dataType: "json",
+                    success: function(response) {
+                        console.log(response);
+                        console.log(id_elemento);
+                        $("#btns-" + id_elemento).removeClass("d-flex");
+                        $("#btns-" + id_elemento).addClass("d-none");
+                        $("#btns-" + id_elemento).parent().prepend(
+                            '<span class="badge bg-danger">Rechazado</span> <button class="btn btn-primary cambiar" data-id="' +
+                            id_elemento + '" >Cambiar</button>');
+                        $(".cambiar").click(function() {
+                            console.log($(this).data("id"));
+                            $(this).siblings("span").remove();
+                            $(this).remove();
+                            $("#btns-" + $(this).data("id")).removeClass("d-none");
+                            $("#btns-" + $(this).data("id")).addClass("d-flex");
+                        });
+                    }
+                });
+            }
+        });
+        $(".cambiar").click(function() {
+            console.log($(this).data("id"));
+            $(this).siblings("span").remove();
+            $(this).remove();
+            $("#btns-" + $(this).data("id")).removeClass("d-none");
+            $("#btns-" + $(this).data("id")).addClass("d-flex");
+        });
     </script>
 @endpush

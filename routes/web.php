@@ -19,7 +19,7 @@ use App\Http\Controllers\HorasExtraController;
 */
 
 Route::get('/', function () {
-    return view('construction');
+    return view('home');
 });
 
 Route::get('/home', function () {
@@ -51,6 +51,7 @@ Route::put('/admin/home/actualizar', [HomeController::class, 'actualizar'])->nam
 
 Route::resource('/admin/usuarios', UsersController::class);
 Route::get('/admin/usuarios/raza/proposicion', [UsersController::class, 'proposicion'])->name('usuarios.proposicion');
+Route::put('/admin/usuarios/raza/evaluar/{id}', [ElementosController::class, 'evaluar'])->name('elementos.evaluar');
 
 Route::resource('/admin/pase_lista', PaseListaController::class);
 Route::resource('/admin/horas_extra', HorasExtraController::class);
