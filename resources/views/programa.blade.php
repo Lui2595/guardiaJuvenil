@@ -1,7 +1,7 @@
 @extends('layouts.frontApp')
 
 @section('content')
-    <div class="display-none" id="page-title" value="programa"></div>
+    <div class="display-none" id="page-title" data-title="programa"></div>
     <div class="site-section">
         <div class="container">
 
@@ -141,7 +141,7 @@
     <script src="frontTheme/js/programa.js"></script>
     <script>
 
-        document.addEventListener("DOMContentLoaded", function() {
+        $(window).on('load', function() {
             $("#encabezado").html("Programa de formación");
         });
 

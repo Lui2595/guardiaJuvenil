@@ -5,3 +5,7 @@ const title = {
     "contacto": "Contacto",
     "noticias": "Noticias",
 }
+
+let pageTitle = $("#page-title").data("title");
+
+$("#encabezado").html(title[pageTitle]);

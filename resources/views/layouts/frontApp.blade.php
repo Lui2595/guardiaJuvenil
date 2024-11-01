@@ -38,6 +38,7 @@
     <script src="{{ asset('/frontTheme/js/jquery.stellar.min.js') }}"></script>
     <script src="{{ asset('/frontTheme/js/jquery.sticky.js') }}"></script>
     <script src="{{ asset('/frontTheme/js/jquery-ui.js') }}"></script>
+    {{-- <script src="{{ asset('/frontTheme/js/page-title.js') }}"></script> --}}
     <script src="{{ asset('/frontTheme/js/popper.min.js') }}"></script>
     <script src="{{ asset('/frontTheme/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('/frontTheme/js/bootstrap-datepicker.min.js') }}"></script>
@@ -163,5 +164,6 @@
         </div>
     </footer>
 
+    {{-- @stack('titulo') --}}
 </body>
 </html>
