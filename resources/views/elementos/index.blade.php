@@ -28,7 +28,12 @@
                                 @foreach ($elementos as $elemento)
                                     <tr>
                                         <td>{{ $elemento->id }}</td>
-                                        <td>{{ $elemento->nombre . ' ' . $elemento->apellido_paterno . ' ' . $elemento->apellido_materno }}
+                                        <td>
+                                            @if (Auth::user()->roll == 'admin' || Auth::user()->roll == 'superadmin')
+                                                <a href="{{ route('elementos.show', $elemento->id) }}">{{ $elemento->nombre . ' ' . $elemento->apellido_paterno . ' ' . $elemento->apellido_materno }}</a>
+                                            @else
+                                            {{ $elemento->nombre . ' ' . $elemento->apellido_paterno . ' ' . $elemento->apellido_materno }}
+                                            @endif
                                         </td>
                                         <td>{{ $elemento->unidad }}</td>
                                         <td>{{ $elemento->edad }}</td>
