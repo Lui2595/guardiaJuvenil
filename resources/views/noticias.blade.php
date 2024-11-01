@@ -1,4 +1,4 @@
-@extends('components.frontApp')
+@extends('layouts.frontApp')
 
 @section('content')
 
@@ -6,7 +6,7 @@
         <div class="container">
             <p id="content">Contenido de la página de noticias</p>
         </div>
-    </div>
+    </div>p
 
 @endsection
 

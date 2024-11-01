@@ -34,6 +34,9 @@ Route::get('/programa', function () {
 Route::get('/noticias', function () {
     return view('noticias');
 });
+Route::get('/galeria', function () {
+    return view('galeria');
+});
 Route::get('/registro', function () {
     return view('sulicitud_registro');
 });

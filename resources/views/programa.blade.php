@@ -1,7 +1,7 @@
-@extends('components.frontApp')
+@extends('layouts.frontApp')
 
 @section('content')
-
+    <div class="display-none" id="page-title" value="programa"></div>
     <div class="site-section">
         <div class="container">
 
@@ -136,49 +136,14 @@
 @endsection
 
 @section('scripts')
-    <script src="frontTheme/js/jquery-3.3.1.min.js"></script>
-    <script src="frontTheme/js/jquery.countdown.min.js"></script>
-    <script src="frontTheme/js/jquery.easing.1.3.js"></script>
-    <script src="frontTheme/js/jquery.fancybox.min.js"></script>
-    <script src="frontTheme/js/jquery.mb.YTPlayer.min.js"></script>
-    <script src="frontTheme/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="frontTheme/js/jquery.stellar.min.js"></script>
-    <script src="frontTheme/js/jquery.sticky.js"></script>
-    <script src="frontTheme/js/jquery-ui.js"></script>
-    {{-- <script src="frontTheme/js/jquery-3.6.0.min.js"></script> --}}
-    <script src="frontTheme/js/popper.min.js"></script>
-    <script src="frontTheme/js/bootstrap.min.js"></script>
-    <script src="frontTheme/js/bootstrap-datepicker.min.js"></script>
-    <script src="frontTheme/js/owl.carousel.min.js"></script>
-    <script src="frontTheme/js/aos.js"></script>
-    <script src="frontTheme/js/main.js"></script>
+
+    {{-- <script src="frontTheme/js/jquery-3.3.1.min.js"></script> --}}
+    <script src="frontTheme/js/programa.js"></script>
     <script>
 
-        $(document).ready(function () {
-            $("#encabezado").append("Programa de formación");
+        document.addEventListener("DOMContentLoaded", function() {
+            $("#encabezado").html("Programa de formación");
         });
 
     </script>
 @endsection
-
-
-
-        {{-- <footer>
-            <ul class="list-unstyled">
-                <li class="mb-2">
-                    <strong class="text-white d-block">Direccion</strong>
-                    Abasolo 1419 B <br> Saltillo, Coah., México
-                </li>
-                <li class="mb-2">
-                    <strong class="text-white d-block">Email</strong>
-                    <a href="#">guardiamexico@gmail.com</a>
-                </li>
-                <li class="mb-2">
-                    <strong class="text-white d-block">
-                    Celular
-                    </strong>
-                    <a href="#">+52 844 552 5550</a>
-                </li>
-            </ul>
-        </footer> --}}
-    </div>
