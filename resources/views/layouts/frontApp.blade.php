@@ -87,7 +87,7 @@
                                     <li class=""><a href="{{ url('/programa') }}#a-campismo" class="">Academia de campismo y excursionismo</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('/noticias') }}" class="nav-link">Noticias</a></li>
+                            <li><a href="{{ url('/noticias') }}" class="nav-link">Blog</a></li>
                             <li><a href="{{ url('/login') }}" class="nav-link">Ingresar</a></li>
                         </ul>
                     </nav>
