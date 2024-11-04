@@ -38,7 +38,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/el_mi.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href=https://www.facebook.com/photo/?fbid=921487190013455&set=a.548307767331401"><img src="{{ asset('storage/el_mi.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">Soldado recibiendo una insignia de un superior</figcaption>
                                     </figure>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/bomberos.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/photo/?fbid=912815504213957&set=a.548307767331401"><img src="{{ asset('storage/bomberos.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">Felicitación a bomberos</figcaption>
                                     </figure>
                                 </div>
@@ -78,7 +78,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/ev_reforestacion.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/photo/?fbid=904746045020903&set=a.548307767331401"><img src="{{ asset('storage/ev_reforestacion.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">Reforestación</figcaption>
                                     </figure>
                                 </div>
@@ -98,7 +98,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/magueyes.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/photo/?fbid=903406901821484&set=a.548307767331401"><img src="{{ asset('storage/magueyes.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">¿Sabías qué?</figcaption>
                                     </figure>
                                 </div>
@@ -117,7 +117,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/poster2.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/photo.php?fbid=897450892417085&set=pb.100064565477349.-2207520000&type=3"><img src="{{ asset('storage/poster2.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">Invitación</figcaption>
                                     </figure>
                                 </div>
@@ -125,7 +125,7 @@
                                     <span class="meta">30 de julio de 20204</span>
                                     <h3 clas="mb-4"><a href="#">Ven a reforestar con nosotros</a></h3>
                                     <p>Amigos, son las recomendaciones para este sábado, únete!</p>
-                                    <p><a href="<!--URL de la nota-->">Leer más</a></p>
+                                    <p><a target="_blank" href="https://www.facebook.com/photo.php?fbid=897450892417085&set=pb.100064565477349.-2207520000&type=3">Leer más</a></p>
                                 </div>
                             </div>
                         </article>
@@ -136,7 +136,7 @@
                             <div class="custom-media d-block">
                                 <div class="img mb-4">
                                     <figure>
-                                        <a href=""><img src="{{ asset('storage/poster.jpg') }}" alt="Imagen" class="img-fluid"></a>
+                                        <a href="https://www.facebook.com/photo/?fbid=897354692426705&set=a.548307767331401"><img src="{{ asset('storage/poster.jpg') }}" target="_blank" alt="Imagen" class="img-fluid"></a>
                                         <figcaption class="text">Invitación</figcaption>
                                     </figure>
                                 </div>

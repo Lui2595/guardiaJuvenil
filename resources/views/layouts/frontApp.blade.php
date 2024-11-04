@@ -28,26 +28,8 @@
     <link rel="stylesheet" href="frontTheme/css/aos.css">
     <link rel="stylesheet" href="frontTheme/css/style.css">
 
-    <!--Scripts-->
-    <script src="{{ asset('/frontTheme/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.easing.1.3.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.fancybox.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.mb.YTPlayer.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery.sticky.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/jquery-ui.js') }}"></script>
-    {{-- <script src="{{ asset('/frontTheme/js/page-title.js') }}"></script> --}}
-    <script src="{{ asset('/frontTheme/js/popper.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/aos.js') }}"></script>
-    <script src="{{ asset('/frontTheme/js/main.js') }}"></script>
-
-
 </head>
+
 <body>
      <!--Mobile Menu (necesario reparar)-->
      <div class="site-mobile-menu site-navbar-target">
@@ -59,12 +41,12 @@
         <div class="site-mobile-menu-body "></div>
     </div>
 
+    <!--Encabezado-->
     <header class="site-navbar py-4" role="banner">
-
         <div class="container">
             <div class="d-flex align-items-center">
                 <div class="site-logo">
-                    <a href="index.html">
+                    <a href="{{ url('/home') }}">
                         <img src="frontTheme/images/logo.png" alt="Logo" style="max-height: 100px;">
                     </a>
                 </div>
@@ -96,8 +78,7 @@
         </div>
     </header>
 
-
-    <!--Encabezado del view-->
+    <!--Banner del encabezado-->
     <div class="hero overlay" style="background-image: url('frontTheme/images/bg_3.jpg'); max-height: 100px;">
         <div class="container">
             <div class="row align-items-center py-5">
@@ -166,4 +147,22 @@
 
     {{-- @stack('titulo') --}}
 </body>
+
+<!--Scripts-->
+<script src="{{ asset('/frontTheme/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.easing.1.3.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.fancybox.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.mb.YTPlayer.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery-migrate-3.0.1.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery.sticky.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/jquery-ui.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/popper.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/aos.js') }}"></script>
+<script src="{{ asset('/frontTheme/js/main.js') }}"></script>
+
 </html>
