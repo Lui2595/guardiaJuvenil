@@ -3,8 +3,8 @@
 @section('content')
 
     <main>
-        <article class="site-section">
-            <div class="container pb-1 mb-5">
+        <article class="site-section mt-4 mb-1">
+            <div class="container pb-1 mb-2">
                 <div class="row mb-1">
                     <div class="col-lg-12">
                         <div class="d-flex team-vs">
@@ -27,7 +27,7 @@
             </div>
         </article>
 
-        <article class="site-section" id="a-deportiva">
+        <article class="site-section mt-1" id="a-deportiva">
             <div class="container pb-1 mb-5">
                 <div class="row mb-1">
                     <div class="col-lg-12">
@@ -69,7 +69,7 @@
                                         <li>Acondicionamiento físico</li>
                                         <li>Atletismo</li>
                                         <li>Boxeo</li>
-                                        <li>Tiro deportio</li>
+                                        <li>Tiro deportivo</li>
                                         <li>Rappel</li>
                                     </ul>
                                 </div>
@@ -77,7 +77,7 @@
                             <div class="team-1" style="width: 60%!important>
                                 <div class="team-details w-100">
                                     <figure>
-                                        <img src="" alt="" class="img-fluid">
+                                        <img src="{{ asset('storage/act_deportivas.png') }}" alt="" class="img-fluid" style="height: 400px; width: auto">
                                         <figcaption class="text-white">Actividades deportivas realizadas en los entrenamientos.</figcaption>
                                     </figure>
                                 </div>
@@ -137,7 +137,7 @@
                             <div class="team-1" style="width: 60%!important">
                                 <div class="team-details w-100">
                                     <figure>
-                                        <img src="" alt="" class="img-fluid">
+                                        <img src="{{ asset('storage/disc_marciales.png') }}" alt="" class="img-fluid" style="height: 400px; width: auto">
                                         <figcaption class="text-white">Practicas de disciplinas marciales en los entrenamientos.</figcaption>
                                     </figure>
                                 </div>
@@ -199,8 +199,9 @@
                             <div class="team-1" style="width: 60%!important">
                                 <div class="team-details w-100">
                                     <figure>
-                                        <img src="" alt="" class="img-fluid">
-                                        <figcaption class="text-white">Pláticas impartidas en los entrenamientos.</figcaption>
+                                        <img src="{{ asset('storage/act_civicas.png') }}" alt="" class="img-fluid" style="height: 400px; width: auto">
+                                        <figcaption class="text-white">
+                                            Actividades civicas realizadas por nuestros compañeros.</figcaption>
                                     </figure>
                                 </div>
                             </div>
@@ -261,7 +262,7 @@
                             <div class="team-1" style="width: 60%!important">
                                 <div class="team-details w-100">
                                     <figure>
-                                        <img src="" alt="" class="img-fluid">
+                                        <img src="{{ asset('storage/primeros_aux.png') }}" alt="" class="img-fluid" style="min-height: 300px; width: auto">
                                         <figcaption class="text-white">Lecciones de primeros auxilios.</figcaption>
                                     </figure>
                                 </div>
@@ -272,7 +273,7 @@
             </div>
         </article>
 
-        <article class="site-section" id="a-campismo">
+        <article class="site-section mb-1" id="a-campismo">
             <div class="container pb-1 mb-5">
                 <div class="row mb-1">
                     <div class="col-lg-12">
@@ -321,7 +322,7 @@
                             <div class="team-1" style="width: 60%!important">
                                 <div class="team-details w-100">
                                     <figure>
-                                        <img src="" alt="" class="img-fluid">
+                                        <img src="{{ asset('storage/act_excursionismo.png')}}" alt="" class="img-fluid" style="height: 400px; width: auto">
                                         <figcaption class="text-white">Actividades de senderismo.</figcaption>
                                     </figure>
                                 </div>
@@ -332,7 +333,7 @@
             </div>
         </article>
 
-        <article class="site-section">
+        <article class="site-section mt-1">
             <div class="container pb-1 mb-5">
                 <div class="row mb-1">
                     <div class="col-lg-12">
