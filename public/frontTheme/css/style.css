@@ -687,8 +687,18 @@ h1, h2, h3, h4, h5,
       .team-vs .score {
         font-size: 2rem;
         left: 50%; } }
+  .team-vs h2 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 20px; }
   .team-vs h3 {
     font-size: 20px;
+    color: #fff;
+    font-weight: 900;
+    margin-bottom: 20px; }
+  .team-vs h4 {
+    font-size: 18px;
     color: #fff;
     font-weight: 900;
     margin-bottom: 20px; }
@@ -716,7 +726,6 @@ h1, h2, h3, h4, h5,
       -webkit-transform: skew(-15deg);
       -ms-transform: skew(-15deg);
       transform: skew(-15deg); }
-
 .latest-news {
   padding: 100px 0; }
   .latest-news .post-entry {
