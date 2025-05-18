@@ -27,6 +27,27 @@
     <link rel="stylesheet" href="frontTheme/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="frontTheme/css/aos.css">
     <link rel="stylesheet" href="frontTheme/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+
+
+    <!--Scripts-->
+    <script src="{{ asset('/frontTheme/js/jquery-3.3.1.min.js') }}" ></script>
+    <script src="{{ asset('/frontTheme/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery.easing.1.3.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery.mb.YTPlayer.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/jquery-ui.js') }}"></script>
+    {{-- <script src="{{ asset('/frontTheme/js/page-title.js') }}"></script> --}}
+    <script src="{{ asset('/frontTheme/js/popper.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/aos.js') }}"></script>
+    <script src="{{ asset('/frontTheme/js/main.js') }}"></script>
+
 
 </head>
 
@@ -164,5 +185,6 @@
 <script src="{{ asset('/frontTheme/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/frontTheme/js/aos.js') }}"></script>
 <script src="{{ asset('/frontTheme/js/main.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </html>

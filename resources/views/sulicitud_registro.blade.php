@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="frontTheme/css/style.css">
 
-
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
 
 </head>
 
@@ -91,53 +91,64 @@
             <form action="{{ route('elementos.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-group">
+                <label for="unidad">Unidad</label>
                 <select name="unidad" id="unidad" class="form-select" required>
                     <option value="">Seleccione una unidad</option>
                     <option value="Biblioparque" {{ old('unidad') == 'Biblioparque' ? 'selected' : '' }}>Biblioparque</option>
                     <option value="Cecytec Sur" {{ old('unidad') == 'Cecytec Sur' ? 'selected' : '' }}>Cecytec Sur</option>
+                    <option value="CBTis 97" {{ old('unidad') == 'CBTis 97' ? 'selected' : '' }}>CBTis 97</option>
                 </select>
               </div>
               <div class="form-group">
+                <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" value="{{ old('nombre') }}" required>
               </div>
               <div class="form-group">
+                <label for="apellido_paterno">Apellido Paterno</label>
                 <input type="text" class="form-control" placeholder="Apellido Paterno" name="apellido_paterno" id="apellido_paterno" value="{{ old('apellido_paterno') }}" required>
               </div>
               <div class="form-group">
+                <label for="apellido_materno">Apellido Materno</label>
                 <input type="text" class="form-control" placeholder="Apellido Materno" name="apellido_materno" id="apellido_materno" value="{{ old('apellido_materno') }}" required>
               </div>
               <div class="form-group">
+                <label for="edad">Edad</label>
                 <input type="number" class="form-control" placeholder="Edad" name="edad" id="edad" value="{{ old('edad') }}" required min="1" max="100">
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
+                <label for="email">Email</label>
                 <input type="text" class="form-control" placeholder="Email" name="email" id="email" value="{{ old('email') }}" required>
-              </div>
+              </div> --}}
               <div class="form-group">
                 <label for="fecha_nacimiento">Fecha de Nacimiento</label>
                 <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}" required>
               </div>
               <div class="form-group">
+                <label for="celular">Celular</label>
                 <input type="text" class="form-control" placeholder="Celular" name="celular" id="celular" value="{{ old('celular') }}" required>
               </div>
               <div class="form-group">
+                <label for="escuela">Escuela</label>
                 <input type="text" class="form-control" placeholder="Escuela" name="escuela" id="escuela" value="{{ old('escuela') }}" required>
               </div>
               <div class="form-group">
+                <label for="grado">Grado Escolar</label>
                 <input type="text" class="form-control" placeholder="Grado Escolar" name="grado" id="grado" value="{{ old('grado') }}" required>
               </div>
               <div class="form-group">
+                <label for="grupo">Grupo Escolar</label>
                 <input type="text" class="form-control" placeholder="Grupo Escolar" name="grupo" id="grupo" value="{{ old('grupo') }}" required>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <input type="text" class="form-control" placeholder="Promedio Escolar " name="promedio" id="promedio" value="{{ old('promedio') }}">
-              </div>
-              <div class="form-group">
+              </div> --}}
+              {{-- <div class="form-group">
                 <input type="text" class="form-control" placeholder="Materia Favorita" name="materia_favorita" id="materia_favorita" value="{{ old('materia_favorita') }}">
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Deporte Favorito" name="deporte_favorito" id="deporte_favorito" value="{{ old('deporte_favorito') }}">
-              </div>
-              <div class="form-group">
+              </div> --}}
+              {{-- <div class="form-group">
                 <input type="text" class="form-control" placeholder="Facebook" name="facebook" id="facebook" value="{{ old('facebook') }}">
               </div>
               <div class="form-group">
@@ -153,8 +164,8 @@
                     <option value="Si" {{ old('lesion') == 'Si' ? 'selected' : '' }}>Si</option>
                     <option value="No" {{ old('lesion') == 'No' ? 'selected' : '' }}>No</option>
                 </select>
-              </div>
-              <div class="form-group">
+              </div> --}}
+              {{-- <div class="form-group">
                 <label for="alergia">¿En que parte fue la lesión?</label>
                 <textarea class="form-control" placeholder="Lesion Detalle" name="detalle_lesion" id="detalle_lesion" cols="20" rows="5">{{ old('detalle_lesion') }}</textarea>
               </div>
@@ -175,37 +186,37 @@
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="NSS" name="nss" id="nss" value="{{ old('nss') }}">
-              </div>
+              </div> --}}
               <div class="form-group">
                 <label for="religion">Nuestra Institución fomenta el Patriotismo, por lo que, para las actividades que se realizan es indispensable el
                     respeto y valor a los Símbolos Patrios, existiendo religiones que prohíben estas prácticas, ¿Cual es tu religión?</label>
                 <input type="text" class="form-control" placeholder="Religion" name="religion" id="religion" value="{{ old('religion') }}" required>
               </div>
               <div class="form-group">
-                <label for="nombre_padre">Nombre Completo de tu padre</label>
+                <label for="nombre_padre">Nombre Completo de tu padre (Nombre, Apellido Paterno, Apellido Materno)</label>
                 <input type="text" class="form-control" placeholder="Nombre del Padre" name="nombre_padre" id="nombre_padre" value="{{ old('nombre_padre') }}" required>
               </div>
               <div class="form-group">
                 <label for="telefono_padre">Telefono de tu padre</label>
                 <input type="text" class="form-control" placeholder="Telefono del Padre" name="telefono_padre" id="telefono_padre" value="{{ old('telefono_padre') }}" required>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="ocupacion_padre">Ocupación de tu padre</label>
                 <input type="text" class="form-control" placeholder="Ocupacion del Padre" name="ocupacion_padre" id="ocupacion_padre" value="{{ old('ocupacion_padre') }}" required>
-              </div>
+              </div> --}}
 
               <div class="form-group">
-                <label for="nombre_madre">Nombre Completo de tu madre</label>
+                <label for="nombre_madre">Nombre Completo de tu madre (Nombre, Apellido Paterno, Apellido Materno)</label>
                 <input type="text" class="form-control" placeholder="Nombre de la Madre" name="nombre_madre" id="nombre_madre" value="{{ old('nombre_madre') }}" required>
               </div>
               <div class="form-group">
                 <label for="telefono_madre">Telefono de tu madre</label>
                 <input type="text" class="form-control" placeholder="Telefono de la Madre" name="telefono_madre" id="telefono_madre" value="{{ old('telefono_madre') }}" required>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="ocupacion_madre">Ocupación de tu madre</label>
                 <input type="text" class="form-control" placeholder="Ocupacion de la Madre" name="ocupacion_madre" id="ocupacion_madre" value="{{ old('ocupacion_madre') }}" required>
-              </div>
+              </div> --}}
 
               <div class="form-group">
                 <label for="concentimiento" class="text-center">Estoy consciente que los entrenamientos pueden provocar, golpes, caídas y lesiones, por lo tanto, libero a la
@@ -353,7 +364,7 @@
   <script src="frontTheme/js/jquery.fancybox.min.js"></script>
   <script src="frontTheme/js/jquery.sticky.js"></script>
   <script src="frontTheme/js/jquery.mb.YTPlayer.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <script src="frontTheme/js/main.js"></script>
 
@@ -420,6 +431,21 @@
     const formulario = document.querySelector("form");
    // formulario.insertBefore(botonLlenar, formulario.firstChild);
   </script>
+
+<script>
+        toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "timeOut": "4000",
+        "positionClass": "toast-top-right"
+    };
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            toastr.error("{{ $error }}");
+        @endforeach
+    @endif
+</script>
+
 
 </body>
 

@@ -43,42 +43,40 @@ class ElementosController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   $validatedData = $request->validate([
+            'unidad' => 'required|string',
+            'nombre' => 'required|string',
+            'apellido_paterno' => 'required|string',
+            'apellido_materno' => 'required|string',
+            'email' => 'nullable|email',
+            'fecha_nacimiento' => 'required|date',
+            'celular' => 'required|string|unique:users,celular',
+            'escuela' => 'required|string',
+            'grado' => 'required|string',
+            'grupo' => 'required|string',
+            'promedio' => 'nullable|string',
+            'materia_favorita' => 'nullable|string',
+            'deporte_favorito' => 'nullable|string',
+            'facebook' => 'nullable|string',
+            'instagram' => 'nullable|string',
+            'tiktok' => 'nullable|string',
+            'lesion' => 'nullable|string',
+            'detalle_lesion' => 'nullable|string',
+            'alergia' => 'nullable|string',
+            'servicio_medico' => 'nullable|string',
+            'nombre_servicio_medico' => 'nullable|string',
+            'nss' => 'nullable|string',
+            'religion' => 'required|string',
+            'nombre_padre' => 'required|string',
+            'telefono_padre' => 'required|string',
+            'nombre_madre' => 'required|string',
+            'telefono_madre' => 'required|string',
+            'concentimiento' => 'required|string',
+            'contacto_emergencia' => 'required|string',
+        ]);
         try {
             //dd($request->all());
-            $validatedData = $request->validate([
-                'unidad' => 'required|string',
-                'nombre' => 'required|string',
-                'apellido_paterno' => 'required|string',
-                'apellido_materno' => 'required|string',
-                'email' => 'required|email|unique:users',
-                'fecha_nacimiento' => 'required|date',
-                'celular' => 'required|string',
-                'escuela' => 'required|string',
-                'grado' => 'required|string',
-                'grupo' => 'required|string',
-                'promedio' => 'nullable|string',
-                'materia_favorita' => 'nullable|string',
-                'deporte_favorito' => 'nullable|string',
-                'facebook' => 'nullable|string',
-                'instagram' => 'nullable|string',
-                'tiktok' => 'nullable|string',
-                'lesion' => 'required|string',
-                'detalle_lesion' => 'nullable|string',
-                'alergia' => 'nullable|string',
-                'servicio_medico' => 'required|string',
-                'nombre_servicio_medico' => 'nullable|string',
-                'nss' => 'nullable|string',
-                'religion' => 'required|string',
-                'nombre_padre' => 'required|string',
-                'telefono_padre' => 'required|string',
-                'ocupacion_padre' => 'required|string',
-                'nombre_madre' => 'required|string',
-                'telefono_madre' => 'required|string',
-                'ocupacion_madre' => 'required|string',
-                'concentimiento' => 'required|string',
-                'contacto_emergencia' => 'required|string',
-            ]);
+
             //dd("paso");
             $request->merge(['name' => $request->nombre . " ". $request->apellido_paterno . " " . $request->apellido_materno]);
             $request->merge(['password' => Hash::make($request->password_solicitud)]);
