@@ -91,7 +91,9 @@
                                 </ul>
                             </li>
                             <li><a href="{{ url('/noticias') }}" class="nav-link">Blog</a></li>
+                            <li><a href="{{ url('/registro') }}" class="nav-link">Solicitud de registro</a></li>
                             <li><a href="{{ url('/login') }}" class="nav-link">Ingresar</a></li>
+
                         </ul>
                     </nav>
                 </div>
