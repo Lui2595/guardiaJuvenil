@@ -41,7 +41,7 @@ Route::get('/registro', function () {
     return view('sulicitud_registro');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

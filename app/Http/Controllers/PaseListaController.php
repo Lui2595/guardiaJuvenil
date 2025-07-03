@@ -78,13 +78,14 @@ class PaseListaController extends Controller
         $fecha = $request->fecha;
         $fecha = date('Y-m-d', strtotime($fecha));
         $paseLista = PaseLista::where('fecha', $fecha)->get()->pluck('user_id');
-        $elementos = elementos::select('user_id','nombre', 'apellido_paterno', 'apellido_materno')->get()->map(function ($item) use ($paseLista) {
+        $elementos = elementos::select('user_id','nombre', 'apellido_paterno', 'apellido_materno','unidad')->get()->map(function ($item) use ($paseLista) {
             if(!$paseLista->contains($item->user_id)){
                 return [
                     'id' => $item->user_id,
                     'nombre' => $item->nombre,
                     'apellido_paterno' => $item->apellido_paterno,
                     'apellido_materno' => $item->apellido_materno,
+                    'unidad' => $item->unidad,
                     'horas' => $item->user->horas_servicio->sum('horas')
                 ];
             }

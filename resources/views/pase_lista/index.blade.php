@@ -20,6 +20,8 @@
                         <thead>
                             <tr>
                                 <th>Nombre</th>
+                                <th>Unidad</th>
+                                <th>Horas</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -44,6 +46,8 @@
                 data.forEach(element => {
                     tabla.append("<tr><td>" + element.apellido_paterno + " " + element.apellido_materno +
                         " " + element.nombre +
+                        "</td><td>" + element.unidad +
+                        "</td><td>" + element.horas +
                         "</td><td><button class='btn btn-primary guardar-asistencia' data-id='" +
                         element.id + "'>Asistencia</button></td></tr>");
                 });
@@ -88,6 +92,7 @@
                     });
                     $(this).prop("disabled", false);
                 });
+
             }
 
             $("#fecha").change(function() {
